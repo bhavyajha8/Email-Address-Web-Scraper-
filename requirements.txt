@@ -1,4 +1,0 @@
-Install these python libraries by writing these command lines in the terminal:
-pip install requests, pandas, bs4
-pip install html5lib
-pip install pyarrow, openpyxl
