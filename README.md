@@ -22,10 +22,13 @@ This Python application allows you to scrape email addresses from a website and 
 
 ## Example
 Here's an example:
+
 ![image](https://github.com/bhavyajha8/Email-Address-Web-Scraper-/assets/105009730/dd76c692-6a67-48a2-b7cc-d1ec6f2ae491)
 
 The file gets saved like:
+
 ![image](https://github.com/bhavyajha8/Email-Address-Web-Scraper-/assets/105009730/ef54a6a8-d88a-466c-9dd1-b6c1dbc6b7cb)
+
 You can double click on the file and access it.
 
 ## Thank you!
