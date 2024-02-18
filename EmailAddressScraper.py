@@ -5,17 +5,12 @@ import pandas as pd
 #function to scrape email addresses from the webpage by taking the url as an input
 def scrape_emails(url):
     response = requests.get(url)
-    if response.status_code == 200: #raises http error for bad status codes
-        soup = BeautifulSoup(response.text, 'html.parser')
-        emails = set() #to eliminate redundancy, stored in set
-        for paragraph in soup.find_all('p'):
-            for email in paragraph.text.split():
-                if '@' in email:
-                    emails.add(email)
-        return list(emails)
-    else:
-        print("Failed to fetch the webpage. Status code:", response.status_code)
-        return []
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    #find all text that matches the email pattern
+    emails = set(re.findall(r'[a-z0-9.\-+_]+@[a-z0-9.\-+_]+\.[a-z]+', response.text, re.I))
+
+    return emails
 
 #function to create dataframe using pandas with the list of emails and then converts it to Excel file
 def save_to_excel(emails, filename):
